@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Login</title>
+</head>
+<body>
+  <div class="flex justify-center items-center min-h-screen bg-zinc-900">
+      <form class="flex flex-col p-10 w-1/3 bg-slate-800 text-white rounded" action="{% url 'login_auth' %}" method="POST">
+          {% csrf_token %}
+          <div class="pt-5 pb-10">
+              <h3 class="underline text-2xl">Login</h3>
+          </div>
+          <label>Nome</label>
+          <input class="mb-5 h-10 bg-transparent border-b-2 border-b-solid border-b-white outline-none" type="text" name="nome_user">
+          <label>Senha</label>
+          <input class="mb-5 h-10 bg-transparent border-b-2 border-b-solid border-b-white outline-none" type="password" name="senha_user">
+          <input class="w-full py-3 cursor-pointer bg-red-950 hover:bg-red-900 transition rounded" type="submit" value="Entrar">
+      </form>
+  </div>
+</body>
+</html>
